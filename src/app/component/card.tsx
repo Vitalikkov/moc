@@ -18,22 +18,8 @@ const ProductCard = () => {
 
   return (
     <div className="product-container">
-      {products.map(product => (
-        <div key={product.id} className="product-card">
-          <div className="product-images">
-            {product.images.map(image => (
-              <img key={image} src={image} alt={product.title} />
-            ))}
-          </div>
-          <div className="product-details">
-            <h2>{product.title}</h2>
-            <p><strong>Категорія:</strong> {product.category.name}</p>
-            <p>{product.description}</p>
-            <p><strong>Ціна:</strong> ${product.price}</p>
-            <button>Читати повністю</button>
-          </div>
-        </div>
-      ))}
+      
+      
     </div>
   );
 }

@@ -1,0 +1,70 @@
+
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    width: 262px;
+    height: 422px;
+    background: #ffff;
+    border-radius: 24px;
+    &_img{
+        position:relative;
+        height: 200px;
+        &_button{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            
+        }
+        &_opinion{
+            position: absolute;
+            bottom: 26px;
+            left: 26px;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            color: #ffff;
+        }
+    }
+    &_description{
+        padding: 24px;
+        &_title{
+            font-weight: 700;
+            line-height: 155%;
+            color: black;
+        }
+        &_price{
+            padding-top: 16px;
+            color: red;
+        }
+        &_date{
+            padding-top: 26px;
+            display: flex;
+            align-items: flex-end;
+            gap:10px;
+            color: gray;
+            > svg{
+                path{
+                    fill: gray;
+                }
+            }
+        }
+        &_geolocation{
+            padding-top: 16px;
+            display: flex;
+            align-items: flex-end;
+            gap:10px;
+            color: gray;
+            > svg{
+                path{
+                    fill: gray;
+                }
+            }
+        }
+    }
+    &:hover{
+        box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.08);
+    }
+}

@@ -5,10 +5,15 @@ import React, { useState, useEffect } from 'react';
 import "./card.scss";
 
 
-const Card = () => {
+const Card = ({item}) => {
   const [cardItems, setСardItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleDescription = () => {
+    setExpanded(!expanded);
+  };
 
 
   useEffect(() => {
@@ -39,13 +44,26 @@ const Card = () => {
   }
 
     return (
-      <div className="card-container">
+      <div className="cardContainer">
         {cardItems.map(item => (
           <div key={item.id} className="card">
-            <h2>{item.title}</h2>
-            <p>Category: {item.category.name}</p>
-            <p>Description: {item.description}</p>
-            <p>Price: ${item.price}</p>
+            <img src={item.images} alt="" />
+            <h2 className="title">{item.title}</h2>
+            
+            <p className={expanded ? "description expanded" : "description"}>
+              {expanded ? item.description : `${item.description.slice(0, 20)}...`}
+              <button onClick={toggleDescription}>
+                {expanded ? "Read less" : "Read more"}
+              </button>
+            </p>
+            <p className="category">{item.category.name}</p>
+            <div className="cardBotton">
+              <div className="priceContainer">
+                <p >Price: </p>
+                <p className="price">$ {item.price}</p>
+              </div>
+              <button>Add To Cart</button>
+            </div>
           </div>
         ))}
       </div>

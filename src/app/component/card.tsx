@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import "./card.scss";
 
 
-const Card = ({item}) => {
+const Card = () => {
   const [cardItems, setСardItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

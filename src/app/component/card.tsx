@@ -8,7 +8,7 @@ import "./card.scss";
 const Card = () => {
   const [cardItems, setСardItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [expanded, setExpanded] = useState(false);
 
   const toggleDescription = () => {
@@ -27,7 +27,7 @@ const Card = () => {
         setСardItems(data);
         setLoading(false);
       } catch (error) {
-        setError(error);
+        setError(error as Error);
         setLoading(false);
       }
     };
